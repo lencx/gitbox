@@ -1,0 +1,18 @@
+{
+  "version": "v3.20.2",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "command": {
+    "create": {
+      "homepage": "https://github.com/lencx/gitbox",
+      "license": "MIT"
+    },
+    "ignoreChanges": ["**/__fixtures__/**", "**/__tests__/**", "**/*.md"],
+    "publish": {
+      "ignoreChanges": ["ignored-file", "*.md"],
+      "message": "chore(release): publish",
+      "registry": "https://npm.pkg.github.com"
+    }
+  },
+  "packages": ["packages/*"]
+}
