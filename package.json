@@ -12,7 +12,6 @@
     "bootstrap": "lerna bootstrap --hoist",
     "demo": "parcel examples/comment/index.html",
     "demo:build": "parcel build examples/comment/index.html",
-    "type-check": "tsc",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "lint:fix": "yarn lint --fix"
   },
@@ -40,7 +39,7 @@
   "husky": {
     "hooks": {
       "pre-commit": [
-        "yarn type-check && lint-staged"
+        "lint-staged"
       ]
     }
   },
