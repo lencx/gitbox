@@ -8,7 +8,7 @@
   "module": "esm/index.js",
   "types": "esm/index.d.ts",
   "scripts": {
-    "watch": "tsc --watch",
+    "watch": "rimraf lib && tsc --watch",
     "build:cjs": "tsc",
     "build:esm": "tsc --module es2015 --outDir esm",
     "build": "npm run build:esm && npm run build:cjs"
