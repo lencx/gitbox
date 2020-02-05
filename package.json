@@ -11,7 +11,10 @@
     "clean:build": "rimraf packages/**/{lib,esm}",
     "bootstrap": "lerna bootstrap --hoist",
     "demo": "parcel examples/comment/index.html",
-    "demo:build": "parcel build examples/comment/index.html"
+    "demo:build": "parcel build examples/comment/index.html",
+    "type-check": "tsc",
+    "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
+    "lint:fix": "yarn lint --fix"
   },
   "workspaces": ["./packages/*"],
   "dependencies": {
@@ -33,5 +36,27 @@
     "stylelint": "^13.0.0",
     "stylelint-config-standard": "^19.0.0",
     "typescript": "^3.7.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": [
+        "yarn type-check && lint-staged"
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint:fix",
+      "git add"
+    ],
+    "*.{css,scss}": [
+      "prettier --write",
+      "stylelint --syntax=scss --fix",
+      "git add"
+    ],
+    "{*.{json,md}}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
