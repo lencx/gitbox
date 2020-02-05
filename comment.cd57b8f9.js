@@ -45,4 +45,3 @@ var e=require("process");Object.defineProperty(exports,"__esModule",{value:!0}),
 },{"./components/comment":"M46z"}],"Focm":[function(require,module,exports) {
 var e=require("../../packages/comment/lib").default;window.addEventListener("load",function(){var n=new e({container:document.getElementById("root"),repo:"xx",name:"xxw"});n.render(),console.log("[3] index.js: ",n)});
 },{"../../packages/comment/lib":"Pd9t"}]},{},["Focm"], null)
-//# sourceMappingURL=/comment.c9580b8b.js.map
