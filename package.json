@@ -4,12 +4,12 @@
   "author": "lencx <cxin1314@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "watch": "lerna run watch",
-    "build": "npm run clean:dist && lerna run build",
+    "lw": "lerna run watch --scope=@gitbox/$PKG",
+    "lb": "lerna run build --scope=@gitbox/$PKG",
     "new": "lerna create",
     "clean": "lerna clean",
-    "clean:dist": "rimraf packages/**/dist",
-    "bootstrap": "lerna bootstrap",
+    "clean:build": "rimraf packages/**/{lib,esm}",
+    "bootstrap": "lerna bootstrap --hoist",
     "demo": "parcel examples/comment/index.html",
     "demo:build": "parcel build examples/comment/index.html"
   },

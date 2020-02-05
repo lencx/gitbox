@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { sayHi } from '@gitbox/utils';
 import { CommentOptions } from '../interface';
 
 export default function BaseComment({ options }: { options: CommentOptions }) {
@@ -7,6 +8,7 @@ export default function BaseComment({ options }: { options: CommentOptions }) {
   const { container, ...rest } = options;
   return (
     <BaseCommentContainer className="gitbox-comment">
+      {sayHi('lencx')}
       <pre>{JSON.stringify(rest)}</pre>
     </BaseCommentContainer>
   );

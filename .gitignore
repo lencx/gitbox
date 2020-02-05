@@ -5,7 +5,8 @@
 node_modules
 
 # build
-packages/*/dist
+packages/*/lib
+packages/*/esm
 dist
 
 # Logs

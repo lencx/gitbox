@@ -5,8 +5,15 @@
   "author": "lencx <cxin1314@gmail.com>",
   "homepage": "https://github.com/lencx/gitbox",
   "license": "MIT",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "esm/index.d.ts",
+  "scripts": {
+    "watch": "rimraf lib && tsc --watch",
+    "build:cjs": "tsc",
+    "build:esm": "tsc --module es2015 --outDir esm",
+    "build": "npm run build:esm && npm run build:cjs"
+  },
   "keywords": [
     "github",
     "gitbox",
@@ -14,24 +21,19 @@
     "comment"
   ],
   "directories": {
-    "dist": "dist",
+    "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "lib",
+    "esm"
   ],
   "publishConfig": {
-    "registry": "https://registry.yarnpkg.com"
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lencx/gitbox.git"
-  },
-  "scripts": {
-    "watch": "tsc --outDir dist/cjs",
-    "build:cjs": "tsc --outDir dist/cjs",
-    "build:esm": "tsc --module es2015 --target ESNext --outDir dist/esm",
-    "build": "npm run build:esm && npm run build:cjs"
   },
   "bugs": {
     "url": "https://github.com/lencx/gitbox/issues"

@@ -1,4 +1,4 @@
-const GitboxComment = require('../../packages/comment/dist/cjs').default;
+const GitboxComment = require('../../packages/comment/lib').default;
 
 window.addEventListener('load', () => {
   const comment = new GitboxComment({
