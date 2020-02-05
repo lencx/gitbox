@@ -1,23 +1,24 @@
 {
   "name": "@gitbox/comment",
   "version": "0.0.0",
-  "description": "a comment lib base on github issues",
+  "description": "a comment library base on github issues",
+  "author": "lencx <cxin1314@gmail.com>",
+  "homepage": "https://github.com/lencx/gitbox",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "keywords": [
     "github",
     "gitbox",
     "issues",
     "comment"
   ],
-  "author": "lencx <cxin1314@gmail.com>",
-  "homepage": "https://github.com/lencx/gitbox",
-  "license": "MIT",
-  "main": "lib/comment.js",
   "directories": {
-    "lib": "lib",
+    "dist": "dist",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "publishConfig": {
     "registry": "https://registry.yarnpkg.com"
@@ -27,11 +28,20 @@
     "url": "git+https://github.com/lencx/gitbox.git"
   },
   "scripts": {
-    "tsc": "tsc",
-    "watch": "tsc --watch",
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "watch": "tsc --outDir dist/cjs",
+    "build:cjs": "tsc --outDir dist/cjs",
+    "build:esm": "tsc --module es2015 --target ESNext --outDir dist/esm",
+    "build": "npm run build:esm && npm run build:cjs"
   },
   "bugs": {
     "url": "https://github.com/lencx/gitbox/issues"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
+  },
+  "dependencies": {
+    "@gitbox/utils": "^0.0.0"
   }
 }

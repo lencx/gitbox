@@ -4,19 +4,32 @@
   "author": "lencx <cxin1314@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "tsc": "lerna run tsc",
     "watch": "lerna run watch",
-    "build": "lerna run build",
+    "build": "npm run clean:dist && lerna run build",
     "new": "lerna create",
     "clean": "lerna clean",
-    "bootstrap": "lerna bootstrap --hoist"
+    "clean:dist": "rimraf packages/**/dist",
+    "bootstrap": "lerna bootstrap",
+    "demo": "parcel examples/comment/index.html",
+    "demo:build": "parcel build examples/comment/index.html"
   },
   "workspaces": ["./packages/*"],
+  "dependencies": {
+    "@gitbox/utils": "file:packages/@gitbox/utils",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
+  },
   "devDependencies": {
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@types/styled-components": "^4.4.2",
     "husky": "^4.2.1",
     "lerna": "^3.19.0",
     "lint-staged": "^10.0.7",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
+    "rimraf": "^3.0.1",
     "stylelint": "^13.0.0",
     "stylelint-config-standard": "^19.0.0",
     "typescript": "^3.7.5"

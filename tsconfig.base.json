@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
     "skipLibCheck": true,
-    "target": "es5",
+    "target": "ESNext",
     "module": "commonjs",
-    "moduleResolution": "node",
     "jsx": "react",
     "declaration": true,
     "pretty": true,
@@ -15,8 +14,7 @@
     "noImplicitReturns": true,
     "noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
-    "lib": ["es2018", "dom"],
-    "importHelpers": true
+    "lib": ["es2018", "dom"]
   },
   "exclude": [
     "node_modules",

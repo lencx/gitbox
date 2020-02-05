@@ -3,8 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@gitbox/comment": ["./src/comment/*"],
-      "@gitbox/fs": ["./src/fs/*"]
+      "@gitbox/*": ["./packages/*/src"]
     }
   }
 }
